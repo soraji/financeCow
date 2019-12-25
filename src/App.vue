@@ -10,19 +10,19 @@
 
 <script>
 import navigation from './components/navigation.vue';
-import mainPage from './components/main.vue';
-import sevenCows from './components/sevenCows.vue';
-import cate from './components/cate.vue';
-import review from './components/review.vue';
-import example from './components/example.vue';
-import test from './components/test.vue';
-import submit from './components/submit.vue';
+// import mainPage from './components/main.vue';
+// import sevenCows from './components/sevenCows.vue';
+// import cate from './components/cate.vue';
+// import review from './components/review.vue';
+// import example from './components/example.vue';
+// import test from './components/test.vue';
+// import submit from './components/submit.vue';
 import footerPage from './components/footer.vue';
 export default {
   name: 'app',
   components: {
     navigation,
-    mainPage,sevenCows,cate,review,example,test,submit,
+    // mainPage,sevenCows,cate,review,example,test,submit,
     footerPage
   }
 }

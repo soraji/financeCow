@@ -7,7 +7,7 @@
       <img src="../assets/btn_portfolio_done.jpg" alt="포트폴리오 확인하기">
     </div>
     <div class="submitForm">
-      <form action="">
+      <form class="gform" id="gform" method="post" action="https://script.google.com/macros/s/AKfycbwoySb8ToFKGspyzINjwXyWoNuohU0NT1kZyb71/exec" target="iframe1">
         <table class="formTable">
           <tr>
             <td colspan="2" style="text-align:center;">이민영 똥멍청이는 이 문구를 수정합니다</td>
@@ -174,25 +174,38 @@
     <div class="agree">
       <input type="checkbox" name="agree" id="agree">개인정보 수집 및 정보공개에 동의합니다
     </div>
+    <iframe name="iframe1" style="display:none;"></iframe>
   </div>
 </template>
 
 <script>
 export default {
   methods:{
-    checkForm(event){
+    checkForm(){
       let name = document.getElementById('name').value;
       let tel1 = document.getElementById('tel1').value;
       let tel2 = document.getElementById('tel2').value;
       let tel3 = document.getElementById('tel3').value;
       const checkBox = document.getElementById('agree').checked;
-      if(tel1.length < 3 || tel1.length > 3 || tel2.length < 3 || tel2.length > 5 || tel3.length > 5 || tel3.length < 4){
-        alert('핸드폰 번호를 정확히 입력해주세요');
-        document.getElementById('tel1').focus();
+      if(name.length == 0){
+        alert('성함을 입력해주세요');
+        document.getElementById('name').focus();
+      }else{
+        if(tel1.length < 3 || tel1.length > 3 || tel2.length < 3 || tel2.length > 5 || tel3.length > 5 || tel3.length < 4){
+          alert('핸드폰 번호를 정확히 입력해주세요');
+          document.getElementById('tel1').focus();  
+        }else{
+          if(checkBox == false){
+            alert('개인정보 수집에 동의해 주세요');
+          }else{
+            document.getElementById('gform').submit();
+            alert('등록되었습니다. 빠른시일안에 연락드리겠습니다');
+          }
+        }
       }
-      if(checkBox == false){
-        alert('개인정보 수집에 동의해 주세요');
-      }
+      
+      
+      
     }
   }
 }
