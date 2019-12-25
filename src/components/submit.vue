@@ -168,7 +168,7 @@
               <button type="button" @click="checkForm()">재무설계 및 포트폴리오 신청</button>
             </td>
           </tr>
-        </table>
+        </table> 
       </form>
     </div>
     <div class="agree">
